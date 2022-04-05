@@ -1,5 +1,10 @@
 input {
     width: 15rem;
     height: 32px;
-    margin: 4px;
+    margin: 10px;
+}
+
+body {
+    background-color: aqua;
+    text-align: center;
 }
