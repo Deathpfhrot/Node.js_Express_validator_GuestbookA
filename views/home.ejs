@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teufelsrochen Guestbook</title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+
+<body>
+    <h1>Teufelsrochen Guestbook</h1>
+    <form action="/neueUser" method="post">
+        <label>
+            Name:
+            <input type="text" name="name">
+        </label>
+        <br>
+        <label>
+            Nachname:
+            <input type="text" name="nachname">
+        </label>
+        <br>
+        <label>
+            E-mail:
+            <input type="email" name="email">
+        </label>
+        <br>
+        <label>
+            Message:
+            <input type="text" name="message">
+        </label>
+        <br>
+        <input type="submit" value="Join the Teufelsrochen Guestbook">
+    </form>
+    <% if(users.length===0){%>
+        <h1>Nobody joined the Teufelrochen Guesbook yet ...</h1>
+        <%} else {%>
+            <h1>Our Teufelsrochen Guestbook Members</h1>
+            <% users.forEach((user)=> {%>
+                <p>
+                    <b>
+                        <%- user.name%>
+                    </b>
+                    <%- user.email%>
+                        schreibt:
+                </p>
+
+                </p>
+                <%- user.message %>
+                    </p>
+                    <% });%>
+                        <%}%>
+</body>
+
+</html>
